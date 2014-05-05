@@ -116,13 +116,12 @@ a.keyword {
 /* container */
 
 #container {
-    width: 940px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 30px;
     padding-top: 37px; // グローバルヘッダを fixed にしているため
+    background-color: @bg-header;
 
     #content {
+        background-color: @bg-light;
         .clearfix;
     }
 }
@@ -152,6 +151,7 @@ a.keyword {
 
 #box2 {
     width: 100%;
+    background-color: @bg-header;
     float: none;
 }
 
@@ -162,6 +162,7 @@ a.keyword {
 }
 
 .hatena-module {
+    color: @text-module;
     text-align: left;
     padding-right: 20px;
     width: 300px;
@@ -200,6 +201,7 @@ a.keyword {
     font-weight: normal;
     font-size: 80%;
     margin: 5px 0 0 0;
+    color: @background;
 }
 
 /* ヘッダ画像を設定したとき */
