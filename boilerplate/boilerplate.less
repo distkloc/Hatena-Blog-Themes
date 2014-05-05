@@ -33,19 +33,27 @@ body {
 
 a {
     color: @link;
-    &:hover {
-        color: @hover;
-    }
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
     &:visited {
         color: @visited;
+    }
+    &:hover {
+        color: @hover;
     }
 }
 
 
 h1,h2,h3,h4,h5,h6 {
-    a,a:hover,a:visited {
-        color: @text-header;
-        text-decoration: none;
+    a {
+        color: @text-title;
+        &:visited {
+            color: @text-title;
+        }
+        &:hover {
+            color: @text-title-hover;
+        }
     }
 }
 
@@ -162,6 +170,14 @@ a.keyword {
     &:nth-child(3n+1) {
         clear: both;
     }
+
+    a {
+        color: @text-module;
+        transition: color 0.2s ease-in-out;
+        &:hover{
+            color: @text-module-hover;
+        }
+    }
 }
 
 ---- END 1カラム */
@@ -176,7 +192,7 @@ a.keyword {
 #title {
     margin: 0;
     a {
-        color: @text;
+        color: @background;
     }
 }
 
@@ -239,7 +255,7 @@ a.keyword {
     margin-bottom: 10px;
 
     a {
-        color: @link;
+        color: @text-light;
         text-decoration: none;
         font-size: 90%;
     }
@@ -251,7 +267,16 @@ a.keyword {
     margin-top: 10px;
     font-size: 80%;
     a {
-        color: @text-light;
+        font-weight: bold;
+        color: @link;
+        border: 2px solid @link;
+        padding: 5px 15px;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: @background;
+            background-color: @link;
+        }
     }
     &.no-categories {
         margin: 0;  // カテゴリー無いとき
@@ -477,10 +502,12 @@ a.keyword {
     margin-bottom: 15px;
     font-size: 120%;
     a {
-        color: @text;
+        color: @text-module;
         text-decoration: none;
+        transition: color 0.2s ease-in-out;
         &:hover {
             text-decoration: underline;
+            color: @text-module-hover;
         }
     }
 }
